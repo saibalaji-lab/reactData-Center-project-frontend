@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+@theme {
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #121513; /* Very dark green-tinted charcoal */
+  --color-surface-elevated-light: #f8fafc;
+  --color-surface-elevated-dark: #1a1f1c; /* Slightly lighter charcoal with green tint */
+  
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #2a332e;
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    
+    --surface: #ffffff;
+    --surface-foreground: #0f172a;
+    
+    --surface-elevated: #f1f5f9;
+    --surface-elevated-foreground: #0f172a;
+    
+    --border: #e2e8f0;
+    
+    --accent: #15803d; /* Professional deep green */
+    --accent-foreground: #ffffff;
+    --accent-hover: #166534;
+    
+    --muted: #64748b;
+    --muted-foreground: #94a3b8;
+    
+    --success: #16a34a;
+    --warning: #eab308;
+    --error: #ef4444;
+    --processing: #3b82f6;
+  }
+
+  .dark {
+    --background: #0d110f; /* Deep charcoal */
+    --foreground: #f1f5f9;
+    
+    --surface: #121614; /* Dark green-tinted surface */
+    --surface-foreground: #f1f5f9;
+    
+    --surface-elevated: #1a201d;
+    --surface-elevated-foreground: #f1f5f9;
+    
+    --border: #232b27;
+    
+    --accent: #10b981; /* Refined emerald */
+    --accent-foreground: #022c22;
+    --accent-hover: #34d399;
+    
+    --muted: #94a3b8;
+    --muted-foreground: #64748b;
+    
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --processing: #3b82f6;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Hide scrollbars but keep functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
